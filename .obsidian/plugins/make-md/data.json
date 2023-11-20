@@ -43,7 +43,8 @@
     "//Spaces",
     "//Spaces",
     "//Spaces",
-    "//Spaces/Spaces/Home"
+    "//Spaces/Spaces/Home",
+    "//Spaces"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
@@ -68,7 +69,9 @@
     "/",
     "spaces://$tags"
   ],
-  "rootSpaces": [],
+  "rootSpaces": [
+    "Attached file"
+  ],
   "spacesUseAlias": false,
   "fmKeyAlias": "aliases",
   "fmKeyBanner": "banner",
