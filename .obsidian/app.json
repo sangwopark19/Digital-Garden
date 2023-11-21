@@ -1,5 +1,6 @@
 {
   "newFileLocation": "current",
   "attachmentFolderPath": "Attached file",
-  "focusNewTab": true
+  "focusNewTab": true,
+  "alwaysUpdateLinks": true
 }
