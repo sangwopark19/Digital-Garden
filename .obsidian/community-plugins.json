@@ -9,5 +9,9 @@
   "obsidian-outliner",
   "obsidian-tasks-plugin",
   "templater-obsidian",
-  "editing-toolbar"
+  "editing-toolbar",
+  "periodic-notes",
+  "cm-editor-syntax-highlight-obsidian",
+  "smart-random-note",
+  "make-md"
 ]
