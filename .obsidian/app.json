@@ -1,4 +1,5 @@
 {
   "newFileLocation": "current",
-  "attachmentFolderPath": "Attached file"
+  "attachmentFolderPath": "Attached file",
+  "focusNewTab": true
 }
