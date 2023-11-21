@@ -36,7 +36,15 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//CS",
+    "//Spaces/Spaces/Home",
+    "//Spaces/Spaces/Home",
+    "//Spaces/Spaces/Home",
+    "//Spaces",
+    "//Spaces",
+    "//Spaces",
+    "//Spaces",
+    "//Spaces/Spaces/Home",
+    "//Spaces",
     "//CS"
   ],
   "expandFolderOnClick": true,
@@ -64,8 +72,7 @@
     "spaces://$tags"
   ],
   "rootSpaces": [
-    "Attached file",
-    "CS"
+    "Attached file"
   ],
   "spacesUseAlias": false,
   "fmKeyAlias": "aliases",
