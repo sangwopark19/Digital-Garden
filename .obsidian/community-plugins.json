@@ -3,7 +3,6 @@
   "table-editor-obsidian",
   "calendar",
   "dataview",
-  "editing-toolbar",
   "obsidian-emoji-toolbar",
   "obsidian-excalidraw-plugin",
   "obsidian-image-toolkit",
@@ -12,7 +11,7 @@
   "obsidian-git",
   "obsidian-outliner",
   "url-into-selection",
-  "remotely-save",
   "obsidian-tasks-plugin",
-  "templater-obsidian"
+  "templater-obsidian",
+  "editing-toolbar"
 ]
