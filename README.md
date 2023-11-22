@@ -10,7 +10,7 @@
 
 ## 작성 툴
 ---
-	- [Obsidian](https://obsidian.md/)
+- [Obsidian](https://obsidian.md/)
 
 ## Disclaimer
 ---
