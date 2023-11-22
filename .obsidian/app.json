@@ -1,6 +1,7 @@
 {
-  "newFileLocation": "current",
+  "newFileLocation": "folder",
   "attachmentFolderPath": "Attached file",
   "focusNewTab": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "newFileFolderPath": "notes"
 }
