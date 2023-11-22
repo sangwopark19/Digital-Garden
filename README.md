@@ -1,2 +1,1 @@
-# obsidian_backup
-Obsidian 연동
+![[Pasted image 20231122115647.png]]
