@@ -42,9 +42,9 @@ System.out.println("Average number: " + average);
 |---|---|
 |스트림 형성(formation): `stream()`|이 메서드는 Collection 인터페이스를 구현하는 컬렉션(예: ArrayList 개체)에서 호출된다. 그리고 생성된 스트림에서 연산이 수행된다.|
 |스트림을 정수 스트림으로 변환(Converting a stream into an integer stream): `mapToInt(value -> another)`|스트림은 정수를 포함하는 스트림으로 변환된다. 문자열이 포함된 스트림은 예를 들어 Integer 클래스의 parseInt 메서드를 사용하여 변환할 수 있다. 정수를 포함하는 스트림으로 연산이 수행된다.|
-|값 필터링(Filtering values):`filter(value -> filter condition)`|필터 조건을 충족하지 않는 요소는 문자열에서 제거된다. 화살표의 오른쪽에는 부울을 반환하는 문이 있습니다. 부울이 `true`이면 요소가 스트림에 허용됩니다. 부울이 false로 평가되면 값이 스트림에 허용되지 않습니다. 필터링된 값으로 작업이 수행됩니다.|
-|평균 계산(Calculating the average): `average()`|`double` 유형의 값을 반환하는 `getAsDouble()` 메서드가 있는 OptionalDouble 유형 객체를 반환합니다. `average()` 메소드를 호출하면 정수가 포함 된 스트림에서 작동하며, `mapToInt` 메소드로 만들 수 있습니다.|
-|스트림의 요소 수 계산(Counting the number of elements in a stream): `count()`|스트림의 요소 수를 `long` 형식 값으로 반환합니다.|
+|값 필터링(Filtering values):`filter(value -> filter condition)`|필터 조건을 충족하지 않는 요소는 문자열에서 제거된다. 화살표의 오른쪽에는 boolean을 반환하는 조건문이 있다. boolean `true`면 요소가 스트림에 허용된다. boolean이 false로 평가되면 값이 스트림에 허용되지 않는다. 필터링된 값으로 연산이 수행된다.|
+|평균 계산(Calculating the average): `average()`|`double` 유형의 값을 반환하는 `getAsDouble()` 메서드가 있는 [[Optional (java)]]Double 유형 객체를 반환한다. `average()` 메소드를 호출하면 정수가 포함 된 스트림에서 작동하며, `mapToInt` 메소드로 만들 수 있다.|
+|스트림의 요소 수 계산(Counting the number of elements in a stream): `count()`|스트림의 요소 수를 `long` 형식 값으로 반환한다.|
 
 ## 스트림 API
 [[java]] 8의 새로운 주요 기능중 하나인 요소 [[시퀀스 (Sequence)]]를
