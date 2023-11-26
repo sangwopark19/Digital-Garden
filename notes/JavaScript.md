@@ -1,0 +1,13 @@
+# JavaScript
+---
+- [[프로그래밍 언어]]
+- 웹 브라우저에서 실행되는 유일한 범용 프로그래밍 언어
+- [[ECMA International]] 표준으로 등재되어 있다.
+	-  [ECMA-262: ECMAScript® (연도) language specification](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+	- ECMA에 등재된 표준화된 스크립트 언어로, 공식적인 명칭은 **ECMAScript**이다.
+	- 공식 기술 위원회인 **TC39**에 의해 매년 스펙이 개정된다.
+- [ECMAScript와 TC39](https://ahnheejong.name/articles/ecmascript-tc39/)
+	- ECMAScript 언어 표준과 TC39
+		- 자바스크립트는 ECMA-262을 만족하는 구현체를 가리킨다. Ecma 인터내셔널의 여러 기술 위원회(Technial Committee, 이하 TC) 중 **TC39 라는 위원회가 이 명세를 관리한다.**
+		- ECMAScript 언어 표준
+			- 1997년 6월에 발표된 첫 번째 판 (edition)을 시작으로 2017년 12월 현재까지 ECMA-262의 총 8개 판이 존재한다. 각 판은 판 번호 또는 발표된 연도를 따라 이름붙여진다. 예를 들어, 2015년에 발표된 6판의 경우 ECMAScript2015 또는 ECMAScript6 이라 (또는 ECMAScript를 ES로 줄여 ES2015 또는 ES
