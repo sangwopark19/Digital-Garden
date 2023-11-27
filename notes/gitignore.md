@@ -30,4 +30,33 @@ git push origin main
 
 ## **주의사항**
 ---
-기존의 [[git]]의 관리를 받고 있던 (commit된 것들) 파일이나 폴더를 .gitig
+기존의 [[git]]의 관리를 받고 있던 (commit된 것들) 파일이나 폴더를 .gitignore 파일에 작성하고 add > commit> push 하여도 ignore(무시) 되지 않는다.
+
+이럴때는 기존에 가지고 있는 cached를 지워야 한다.
+다음과 같은 명령어를 작성한다.
+```
+# 파일 이라면
+git rm --cached test.txt
+
+# 전체파일 이라면
+git rm --cached *.txt
+
+# 폴더 라면
+git rm --cached test/ -r
+```
+
+git rm --cache 명령어는 Staging Area(add를 하고나서의 영역)에서 파일을 제거하고 working directory(Local)에서는 파일을 유지하는 명령어이다.
+위의 명령어를 실행한 후 꼭 commit을 해줘야 한다.
+
+### 추가로
+기존에 관리하고 있던(commit된 것들) 파일을 cached 명령어를 안쓰고 무시하는 방법이 있다. 명령어는 다음과 같다.
+
+`git update-index --assume-unchanged [파일명]
+
+다음과 같이 무시를 선언하고 다시 취소하는 방법도 있다.
+`git update-index --no-assume-unchanged [파일명]`
+
+수정사항 무시 파일 조회는 다음 명령어를 사용한다.
+`git ls-files -v|grep '^h'`
+
+---
