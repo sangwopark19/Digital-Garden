@@ -30,3 +30,19 @@ git config (global) --list
 
 2) 에디터에서 보기
 git config (global) -e
+
+## alias
+---
+명령어를 편하게 사용하기 위한 단축어 설정
+```console
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+```
+
+이미 있는 명령을 편리하고 새로운 명령으로 만들 수 있다.
+아래는 최근 커밋을 확인하는 명령어 alias이다.
+```console
+git config --global alias.last 'log -1 HEAD'
+```
