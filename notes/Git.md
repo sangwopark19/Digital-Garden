@@ -39,6 +39,8 @@ git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
+git config --global alias.ps push
+git config --global alias.ad 'add .'
 ```
 
 이미 있는 명령을 편리하고 새로운 명령으로 만들 수 있다.
