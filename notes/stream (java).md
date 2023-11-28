@@ -13,37 +13,31 @@ stream은 1회용이다. [최종연산](#최종연산) 후에는 stream이 닫�
 	실제로는 무한한 수의 중간 연산을 `.`으로 구분해 순차적으로 연결할 수 있다.
 반면에 `average`메소드는 최종연산 이다. 최종연산은 처리할 값을 반환하며, 이 값은 스트림 요소에서 형성된다.
 
-> [!note] 아래 그림은 스트림의 작동 방식을 보여준다. 
+> [!note]- 아래 그림은 스트림의 작동 방식을 보여준다. 
 >  (1) 값이있는 list다. list에서 stream() 메서드를 호출하면
 >  (2) `stream<List>`가 생성된다. 그런다음 값은 개별적으로 처리된다. 스트림 값은
->  (3) filter 메서드로 
-> 
-> 
-> 
+>  (3) filter 메서드로 조건을 충족하지 못하는 값을 제거하는 방식으로 필터링 된다.
+>  (4) map 메서드는 스트림의 값을 한 형식에서 다른 형식으로 매핑하는 데 사용된다.
+>  (5) collect 메서드는 제공된 컬렉션 (예: list)에 스트림 값을 수집한다.
 > ![[Pasted image 20231128144824.png]]
+
+> [!note]- 위 이미지에 표시된 예제의 코드
+> 이 예제 스트림에서는 값이 추가되는 새 ArrayList가 만들어진다. 이 연산은 마지막 줄에서 실행된다.
+> ```
+> 
+> ``
 > 
 > 
-1. 시작점 (1)은 값이 있는 list다. list에서 stream() 메서드를 호출하면 
-2. `stream<List>`가 생성된다. 그런다음 값은 개별적으로 처리된다. 스트림  값은
-3. filter 메서드로 조건을 충족하지 못하는 값을 제거하는 방식으로 필터링 된다.
-4. map 메서드는 스트림의 값을 한 형식에서 다른 형식으로 매핑하는 데 사용된다.
-5. collect 메서드는 제공된 컬렉션 (예: list)에 스트림 값을 수집한다.
-![[Pasted image 20231128144824.png]]
+
+
+
+```
+```
+
+
 
 위의 의미지에 표시된 예제의 코드. 이 예제 스트림에서는 값이 추가되는 새 ArrayList가 만들어진다. 이 연산은 마지막 줄에서 실행된다.
-```java
-List<Integer> list = new ArrayList<>();
-list.add(3);
-list.add(7);
-list.add(4);
-list.add(2);
-list.add(6);
 
-ArrayList<Integer> values = list.stream()
-    .filter(value -> value > 5)
-    .map(value -> value * 2)
-    .collect(Collectors.toCollection(ArrayList::new));
-```
 
 ## 최종연산 
 ---
