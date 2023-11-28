@@ -69,7 +69,7 @@ values.stream()
 ```
 
 ### collect
-스트림 값을 다른 컬렉션으로 수집할 수 있다. 아래 예제에서는 양수 값만 포함하는 새 리스트를 만든다. `collect` 메서드는 스트림 값이 수집되는 Collectors 개체에 매개변수로 제공된다 (예: `Collectors.toCollection(ArrayList::::new`) 호출하면 수집된 값을 보유하는 새 Array
+스트림 값을 다른 컬렉션으로 수집할 수 있다. 아래 예제에서는 양수 값만 포함하는 새 리스트를 만든다. `collect` 메서드는 스트림 값이 수집되는 Collectors 개체에 매개변수로 제공된다 (예: `Collectors.toCollection(ArrayList::::new`) 호출하면 수집된 값을 보유하는 새 ArrayList 객체가 만들어지
 
 
 ## 예시
