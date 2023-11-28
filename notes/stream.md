@@ -5,4 +5,4 @@
 자바에선 주로 [[람다 (lambda)]]표현식을 사용한다.
 ## 종류
 ---
-[[stream (java)]]
+[[notes/stream (java)]]

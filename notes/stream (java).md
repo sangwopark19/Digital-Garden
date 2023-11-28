@@ -3,6 +3,7 @@
 [[stream]]을 사용하면 프로그래머는 [[컬렉션 (java)]]의 각 값에 대해 실행되는 이벤트 시퀀스를 정의한다.
 이벤트 체인에는 일부 값 덤프, 한 형식에서 다른 형식으로의 값 변환 또는 계산이 포함될 수 있다.
 스트림은 원래 데이터 컬렉션의 값을 변경하지 않고 단지 처리할 뿐이다. 변환을 유지하려면 다른 데이터 컬렉션으로 컴파일 해야한다.
+[[람다 (lambda)]]을 사용한다.
 stream은 1회용이다. [최종연산](#최종연산) 후에는 stream이 닫힌다.
 ## 스트림 메서드
 ---
@@ -69,7 +70,24 @@ values.stream()
 ```
 
 ### collect
-스트림 값을 다른 컬렉션으로 수집할 수 있다. 아래 예제에서는 양수 값만 포함하는 새 리스트를 만든다. `collect` 메서드는 스트림 값이 수집되는 Collectors 개체에 매개변수로 제공된다 (예: `Collectors.toCollection(ArrayList::::new`) 호출하면 수집된 값을 보유하는 새 ArrayList 객체가 만들어지
+스트림 값을 다른 컬렉션으로 수집할 수 있다. 아래 예제에서는 양수 값만 포함하는 새 리스트를 만든다. `collect` 메서드는 스트림 값이 수집되는 Collectors 개체에 매개변수로 제공된다 (예: `Collectors.toCollection(ArrayList::::new`) 호출하면 수집된 값을 보유하는 새 ArrayList 객체가 만들어진다.
+```java
+List<Integer> values = new ArrayList<>();
+values.add(3);
+values.add(2);
+values.add(-17);
+values.add(-6);
+values.add(8);
+
+ArrayList<Integer> positives = values.stream()
+    .filter(value -> value > 0)
+    .collect(Collectors.toCollection(ArrayList::new));
+
+// 3, 2, 8
+positives.stream()
+    .forEach(value -> System.out.println(value));
+```
+
 
 
 ## 예시
