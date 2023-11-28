@@ -2,6 +2,31 @@
 ---
 마크다운방식 노트
 
+아래 목차를 이용하시면 원하는 마크다운 문법으로 빠르게 이동가능합니다. 또한, PC의 경우 오른쪽 하단에 뜨는 위로가기 화살표를 이용하시면, 다시 목차로 돌아오실 수 있습니다.
+
+글 구성
+
+- [일반적인 마크다운 문법 정리](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#---)
+    - [1. 제목(Headers)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#1-headers)
+    - [2. 굵게(Bold)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#2-bold)
+    - [3. 기울임, 이탤릭(Italic)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#3--italic)
+    - [4. 취소선(Strikethrough)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#4-strikethrough)
+    - [5. 리스트(Lists)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#5-lists)
+    - [6. 링크(Links)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#6-links)
+    - [7. 이미지(Images)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#7-images)
+    - [8. 인용구(Blockquotes)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#8-blockquotes)
+    - [9. 코드(Code)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#9-code)
+    - [10. 수평선(Horizontal Rule)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#10-horizontal-rule)
+    - [11. 각주(Footnotes)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#11-footnotes)
+- [옵시디언 전용 마크다운 문법 정리](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#----)
+    - [1. 하이라이트 (Highlight)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#1--highlight)
+    - [2. 체크박스 (check box)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#2--check-box)
+    - [3. 그림 크기(Images size)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#3--images-size)
+    - [4. 문서 링크 (Internal Links)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#4---internal-links)
+    - [5. 문서 임베딩 (Embedding Links)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#5---embedding-links)
+    - [6. 문단 참조(Block Reference)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#6--block-reference)
+    - [7. 강조 상자 넣기 (Callout, 말풍선)](https://statisticsplaybook.com/obsidian-markdown-cheatsheet/#7----callout-)
+
 ## 일반적인 마크다운 문법 정리
 
 마크다운은 여러가지 버전이 존재합니다. 그 중 일반적으로 많이 사용하는 마크다운과 옵시디언에서만 작동하는 옵시디언 전용 마크다운이 존재하는데요, 먼저 일반적인 마크다운 문법 정리를 해보겠습니다.
