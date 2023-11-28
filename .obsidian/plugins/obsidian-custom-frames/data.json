@@ -10,6 +10,28 @@
       "zoomLevel": 1,
       "forceIframe": false,
       "customCss": ""
+    },
+    {
+      "url": "https://bard.google.com/chat",
+      "displayName": "bard",
+      "icon": "bot",
+      "hideOnMobile": true,
+      "addRibbonIcon": false,
+      "openInCenter": false,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": ""
+    },
+    {
+      "url": "https://www.google.com/",
+      "displayName": "google",
+      "icon": "bot",
+      "hideOnMobile": true,
+      "addRibbonIcon": false,
+      "openInCenter": false,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": ""
     }
   ],
   "padding": 5
