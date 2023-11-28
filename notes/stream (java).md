@@ -39,7 +39,7 @@ System.out.println("Values: " + values.stream().count());
 	리스트의 값 개수를 세는 `count` 메소드, 리스트의 값들을 반복하는 `forEach`메소드, 리스트 값을 데이터 구조로 수집하는 `collect`메소드, 그리고 리스트 항목을 결합하는 `reduce`이다.
 
 ### count
-스트림 값 수를 `long` 형식 변수로 알려준다.
+스트림의 값 개수를 `long` 형식 변수로 알려준다.
 ```java
 List<Integer> values = new ArrayList<>();
 values.add(3);
@@ -53,7 +53,23 @@ System.out.println("Values: " + values.stream().count());
 ```
 
 ### forEach
+각 리스트 값에 대해 수행할 작업을 정의하고 스트림 처리를 종료한다. 아래 예시에서는 먼저 숫자 리스트를 생성한 다음, 그 중에서 2로 나누어 떨어지는 숫자만 출력한다.
+```java
+List<Integer> values = new ArrayList<>();
+values.add(3);
+values.add(2);
+values.add(17);
+values.add(6);
+values.add(8);
 
+// 2, 6, 8
+values.stream()
+    .filter(value -> value % 2 == 0)
+    .forEach(value -> System.out.println(value));
+```
+
+### collect
+스트림 값을 다른 컬렉션으로 수집할 수 있다. 아래 예제에서는 양수 값만 포함하는 새 리스트를 만든다. `collect` 메서드는 스트림 값이 수집되는 Collectors 갳
 ## 예시
 ---
 ```java
