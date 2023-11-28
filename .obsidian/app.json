@@ -4,5 +4,6 @@
   "focusNewTab": true,
   "alwaysUpdateLinks": true,
   "newFileFolderPath": "notes",
-  "autoPairBrackets": false
+  "autoPairBrackets": false,
+  "showUnsupportedFiles": true
 }
