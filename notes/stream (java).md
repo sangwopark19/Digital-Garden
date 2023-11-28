@@ -37,7 +37,9 @@ ArrayList<Integer> values = list.stream()
     .collect(Collectors.toCollection(ArrayList::new));
 ```
 
-## #최종여
+## #최종연산 
+---
+
 ## 예시
 ---
 ```java
