@@ -88,6 +88,8 @@ positives.stream()
     .forEach(value -> System.out.println(value));
 ```
 
+### reduce
+
 
 
 ## 예시
@@ -134,3 +136,6 @@ System.out.println("Average number: " + average);
 
 ## 스트림 API
 [[java]] 8의 새로운 주요 기능중 하나인 요소 [[시퀀스 (Sequence)]]를
+
+---
+#java
