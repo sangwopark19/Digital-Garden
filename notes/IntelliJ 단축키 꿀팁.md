@@ -4,3 +4,4 @@
 - ctrl + opt + n: 현재 디렉토리에서 새 파일 생성
 - psvm: public static void main
 - (fn) + F2: 오류가 난 곳으로 바로 이동
+- cmd + e: 최근연 파일들 보기(바로 이동)
