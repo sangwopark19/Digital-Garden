@@ -24,6 +24,18 @@ private DiscountPolicy discountPolicy;
 # AppConfig의 등장
 ---
 ### AppConfig
+```java
+public class AppConfig {  
+  
+    public MemberService memberService() {  
+        return new MemberServiceImpl(new MemoryMemberRepository());  
+    }  
+  
+    public OrderService orderService() {  
+        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());  
+    }  
+}
+```
 - 애플리케이션의 전체 동작 방식을 구성(config)하기 위해, "**구현 객체를 생성**"하고, "**연결**"하는 책임을 가지는 별도의 설정 클래스를 만들자.
 - AppConfig는 애플리케이션의 실제 동작에 필요한 **구현 객체를 생성**한다.
 	- `MemberServiceImpl`
@@ -34,8 +46,33 @@ private DiscountPolicy discountPolicy;
 	- `MemberServiceImpl` -> `MemoryMemberRepository`
 	- `OrderServiceImpl` > `MemoryMemberRepository`, `FixDiscountPolicy`
 
-### `MemberServiceImpl` 생성자 주입 후
-- 설계 변경으로 `MemberServiceImpl`은 ``
+### MemberServiceImpl 생성자 주입 후
+```java
+public class MemberServiceImpl implements MemberService {  
+  
+    private final MemberRepository memberRepository;  
+  
+    public MemberServiceImpl(MemberRepository memberRepository) {  
+        this.memberRepository = memberRepository;  
+    }  
+  
+    @Override  
+    public void join(Member member) {  
+        memberRepository.save(member);  
+    }  
+  
+    @Override  
+    public Member findMember(Long memberId) {  
+        return memberRepository.findById(memberId);  
+    }  
+}
+```
+- 설계 변경으로 `MemberServiceImpl`은 `MemoryMemberRepository`를 의존하지 않는다.
+- 단지 `MemberRepository`인터페이스만 의존한다.
+- `MemberServiceImpl` 입장에서 생성자를 통해 어떤 구현 객체가 들어올지(주입될지)는 알 수 없다.
+- `MemberServiceImpl`의 생성자를 통해서 어떤 구현 객체를 주입할지는 오직 외부(`AppConfig`)에서 결정된다.
+- `MemberServiceImpl`은 이제부터 **의존관계에 대한 고민은 외부**에 맡기고 **실행에만 집중**하면 된다.
+- ![[Pasted image 20231130123329.png]]
 
 ## 관련자료
 ---
