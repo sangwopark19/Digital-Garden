@@ -5,3 +5,4 @@
 - psvm: public static void main
 - (fn) + F2: 오류가 난 곳으로 바로 이동
 - cmd + e: 최근연 파일들 보기(히스토리)
+- cmd + opt + m: 한번누르면 퀵메소드
