@@ -19,10 +19,24 @@ private DiscountPolicy discountPolicy;
 
 ## 관심사의 분리
 ---
-[[관ㅅ
+[[관심사의 분리]]
+
 # AppConfig의 등장
 ---
+### AppConfig
 - 애플리케이션의 전체 동작 방식을 구성(config)하기 위해, "**구현 객체를 생성**"하고, "**연결**"하는 책임을 가지는 별도의 설정 클래스를 만들자.
+- AppConfig는 애플리케이션의 실제 동작에 필요한 **구현 객체를 생성**한다.
+	- `MemberServiceImpl`
+	- `MemoryMemberRepository`
+	- `OrderServiceImpl`
+	- `FixDiscountPolicy`
+- Appconfig는 생성한 객체 인스턴스의 참조(레퍼런스)를 **생성자를 통해서 주입(연결** 해준다.
+	- `MemberServiceImpl` -> `MemoryMemberRepository`
+	- `OrderServiceImpl` > `MemoryMemberRepository`, `FixDiscountPolicy`
+
+### `MemberServiceImpl` 생성자 주입 후
+- 설계 변경으로 `MemberServiceImpl`은 ``
+
 ## 관련자료
 ---
 - [[스프링 핵심 원리 - 기본편]]
