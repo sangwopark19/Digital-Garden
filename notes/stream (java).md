@@ -8,7 +8,7 @@ stream은 1회용이다. [최종연산](#최종연산) 후에는 stream이 닫�
 ## 스트림 메서드
 ---
 스트림 메서드는 크게 두 가지 범주로 나눌 수 있다.
-1. 요소 처리를 위한 중간 연산
+1. 요소 처리를 위한 [중간연산](#중간연산)
 2. 요소 처리를 종료하는 [최종연산](#최종연산)
 `filter`메소드와 `mapToInt`메소드 모두 중간 연산이다. 중간 연산은 **추가로 처리할 수 있는 값을 반환**한다.
 	실제로는 무한한 수의 중간 연산을 `.`으로 구분해 순차적으로 연결할 수 있다.
@@ -89,7 +89,131 @@ positives.stream()
 ```
 
 ### reduce
+스트림 요소를 다른 형식으로 결합하려는 경우에 유용하다. `reduce` 메서드에서 허용하는 매개변수의 형식은 다음과 같다.
+```java
+// reduce(아무것도안한 초기값,(다음 연산 이전 값, 객체) -> 객체에 대한 작업)
+reduce(*initialState*, (*previous*, *object*) -> *actions on the object*)
+```
 
+예를들어 다음과 같이 reduce 메서드를 사용하여 정수 목록의 합을 계산할 수 있다.
+```java
+ArrayList<Integer> values = new ArrayList<>();
+values.add(7);
+values.add(3);
+values.add(2);
+values.add(1);
+
+int sum = values.stream()
+    .reduce(0, (previousSum, value) -> previousSum + value);
+
+// 13
+System.out.println(sum);
+```
+
+같은 방식으로 문자열 리스트에서 결합된 행으로 구분된 문자열을 형성할 수 있다.
+```java
+ArrayList<String> words = new ArrayList<>();
+words.add("First");
+words.add("Second");
+words.add("Third");
+words.add("Fourth");
+
+String combined = words.stream()
+    .reduce("", (previousString, word) -> previousString + word + "\n");
+
+// First, Second, Third, Fourth 
+// 단어마다 \n로 줄넘김이 된다.
+System.out.println(combined);
+```
+
+## 중간연산
+---
+중간연산은 스트림을 반환하는 메서드이다. 반환된 값은 스트림이므로 중간연산을 **순차적으로 호출**할 수 있다. 
+일반적인 중간연산은 다음과 같다.
+- map: 값을 한 형식에서 다른 형식으로 변환하는 작업
+- mapToInt: 구체적으로 값을 정수 스트림으로 변환하는 작업
+- filter: 값을 필터링
+- distinct: 고유한 값을 식별(중복제거)
+- sorted: 값을 정렬 (정렬이 가능한 경우에만)
+
+실제 활용을 보기위해 예제 코드를 보자.
+다음과 같은 Person 클래스가 있다.
+```java
+public class Person {
+    private String firstName;
+    private String lastName;
+    private int birthYear;
+
+    public Person(String firstName, String lastName, int birthYear) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthYear = birthYear;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public int getBirthYear() {
+        return this.birthYear;
+    }
+}
+```
+
+### 1. `List<Person>`에서 1970년 이전에 태어난 사람의 수 
+1970년 이전에 태어난 사람만 필터링하기 위해 `filter`메소드를 사용한다. 그런다음 `count`메서드를 사용하여 개수를 계산한다.
+
+``` java
+// List<Person> persons = new ArrayList<>(); 객체가 이미 만들어져 있다고 가정하자
+
+long count = persons.stream()
+	.filter(person -> person.getBirthYear() < 1970)
+	.count();
+System.out.println("Count: " + count);
+```
+
+### 2. `List<Person>`에서 문자 "A"로 시작하는 사람의 이름 개수 출력
+`filter`를 사용하여 이름이 문자 "A"로 시작하는 사람으로 범위를 좁힌다. 그다음 `count`로 사람 수를 계산한다.
+
+```java
+// List<Person> persons = new ArrayList<>(); 객체가 이미 만들어져 있다고 가정하자
+
+long count = persons.stream()
+    .filter(person -> person.getFirstName().startsWith("A"))
+    .count();
+System.out.println("Count: " + count);
+```
+
+### 3. `List<Person>`에서 중복되지 않는 이름을 알파벳 순서로 출력
+`map`메서드를 사용하여 person 객체가 포함된 스트림을 이름이 포함된 스트림으로 변경한다. 그 다음 중복이 제거된 스트림을 반환하는 `distinct`메소드를 호출한다. 다음으로 문자열을 정렬하는 `sorted`메소드를 호출한다. 마지막으로 문자열을 인쇄하는 데 사용되는 `forEach`메소드를 호출한다.
+
+```java
+// List<Person> persons = new ArrayList<>(); 객체가 이미 만들어져 있다고 가정하자
+
+persons.stream()
+    .map(person -> person.getFirstName())
+    .distinct()
+    .sorted()
+    .forEach(name -> System.out.println(name));
+```
+
+
+> [!note] ### `distinct`와 `sorted`메소드의 작동 방식
+> `distinct`는 두 객체가 동일한지 여부를 비교하기 위해 모든 객체에 있는 `equals`를 사용한다.
+> 그런데 만약 객체에서 equals가 재정의 안되었다면 Object에 있는 equals를 사용한다
+> 
+> `sorted`는 내부적으로 `Comparator`를 사용하여 요소를 비교하고 정렬한다.
+> 요소가 Comparable 인터페이스를 구현하고 있다면, 기본적으로는 해당 요소의 `compareTo`메서드를 사용하여 비교한다. 
+> 그런데 만약 없다면 Comparator를 직접 만들어 줘야 한다.
+
+
+
+
+>  
 
 
 ## 예시
