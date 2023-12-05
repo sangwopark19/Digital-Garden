@@ -26,6 +26,82 @@
 - 리액트 컴포넌트의 이름은 **항상 대문자로** 시작 해야한다.
 - 일반 html태크는 **항상 소문자만 사용** 해야한다.
 
+### 사용법
+- 서로 다른 모듈에서 클래스를 사용하려면 **임포트**를 해야 한다.
+```js
+// 기본 임포트
+import FirstComponent from './components/FirstComponent';
+
+// 이름지정 임포트 (중괄호를 사용해야함)
+import {SecondComponent} from './components/FirstComponent';
+
+```
+#### 예시
+컴포넌트는 파일당 하나만 있는게 가장 좋다.
+다음과 같은 컴포넌트를가 있을때
+```js
+export default function FirstComponent() {
+
+return (
+
+<div className='FirstComponent'>FirstComponent</div>
+
+)
+
+}
+```
+App.js에서 사용하기 위해선 다음 코드를 사용해야 한다.
+```js
+import './App.css';
+
+import FirstComponent from './components/FirstComponent';
+
+  
+
+function App() {
+
+return (
+
+<div className="App">
+
+<FirstComponent />
+
+</div>
+
+);
+
+}
+```
+
+- 컴포넌트 파일당 export default는 **무조건 있어야 하고 한개만 있어야 한다**
+	- 같은파일에 컴포넌트를 추가로 넣고싶으면 다음과 같이 사용한다
+```js
+export default function FirstComponent() {
+
+return (
+
+<div className='FirstComponent'>FirstComponent</div>
+
+)
+
+}
+
+default function SecondComponent() {
+
+return (
+
+<div className='FirstComponent'>FirstComponent</div>
+
+)
+
+}
+```
+그리고 app.js 에서 불러올때 다음과 같이 중괄호가 들어가야 한다.
+```js
+import {SecondComponent} from './components/FirstComponent';
+
+```
+
 ## State
 ---
 리액트 초기에는 클래스 컴포넌트만 state를 가질 수 있었다.
