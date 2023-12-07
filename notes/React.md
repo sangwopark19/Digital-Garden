@@ -108,6 +108,19 @@ import {SecondComponent} from './components/FirstComponent';
 하지만 16.8 버전 이후 함수 컴포넌트도 **Hooks**를 이용하면 state를 가질 수 있게 되었다.
 즉 이제는 **클래스 컴포넌트를 사용할 필요가 없다. 함수 컴포넌트만 사용하자.**
 
+### hooks
+`useSate()`는 2개의 배열값을 리턴한다.
+- 초기값
+- 함수
+아래 예시는 초기값을 0으로 설정하고 함수가 실행될 때마다 초기값에서 +1 하는 예시다
+```js
+const [count, setCount] = useState(0);
+
+function incremmentCounterfunction() {
+	setCount(count + 1)
+}
+```
+
 ## JSX
 ---
 Javascript XML
@@ -145,4 +158,5 @@ import './style.css'
 
 <button className='buttonStyle'>
 ```
+
 
