@@ -124,3 +124,25 @@ JSX의 특징은 다음과 같다.
 Babel은 JSX를 JS로 변환한다.
 ### 쓰는 이유
 최신 Javascript 문법이 구버전 브라우저에서도 동작 가능하게 컴파일 해주는 기술
+
+## JSX에서 CSS 정의
+---
+
+- style
+	- 스타일 값을 객체로 넘겨줘야하기 때문에 {}한번, 그리고 스타일을 객체로 감싸기위해 {}한번 **총 2번** {}로 감싸야 한다.
+```css
+<button style={{borderRadius:"30px"}}>
+```
+
+- className
+	스타일 jsx내부 자바스크립트 정의방법
+```js
+const buttonStyle = {borderRadius:"30px"}}
+```
+	외부 css 정의 방법
+```js
+import './style.css'
+
+<button className='buttonStyle'>
+```
+
