@@ -110,8 +110,8 @@ import {SecondComponent} from './components/FirstComponent';
 
 ### hooks
 `useSate()`는 2개의 배열값을 리턴한다.
-- 초기값
-- 함수
+- 현재상태 (초기값)
+- 상태를 업데이트하는 함수
 아래 예시는 초기값을 0으로 설정하고 함수가 실행될 때마다 초기값에서 +1 하는 예시다
 ```js
 const [count, setCount] = useState(0);
@@ -121,6 +121,15 @@ function incremmentCounterfunction() {
 }
 ```
 
+
+### dom 접근방식
+- 페이지 로드 시 React가 가상DOM v1을 생성
+- 페이지 업데이트 후 가상 DOM v2 생성
+- React가 v1, v2의 차이를 계산
+- 변경사항을 동기화 (HTML 페이지 업데이트)
+
+- **요약**: DOM을 직접 업데이트하지 않는다.
+	- React는 변경 사항을 식별하고 DOM을 **효율적으로** 업데이트한다.
 ## JSX
 ---
 Javascript XML
