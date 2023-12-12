@@ -71,10 +71,16 @@ Spring Hateoas를 활용해 RESTFul API를 작성합니다.
 
 ## 기타
 ---
-- 
+- [커밋 컨벤션 (구글 커밋 컨벤션)](https://github.com/sangwopark19/Digital-Garden/blob/main/notes/커밋%20컨벤션%20(구글).md)
+- 코드 컨벤션:
+	- [백엔드 (구글)](https://google.github.io/styleguide/javaguide.html)
+	- [프론트 (Prettier](https://prettier.io)
+- 협업 툴: Discord, Notion
 
+## 마지막으로
+---
 팀장도 부족한게 많습니다. 하지만 노력만큼은 자신있습니다.
-팀원분들도 실력은 상관 없으니 개발을 정말 좋아하고, 지금 부족해도 공부하면서 모든부분에 기여하고 싶은 분이 오셨으면 좋겠습니다.
+팀원분들도 실력은 상관 없습니다. 개발을 정말 좋아하고, 지금 부족해도 공부하면서 모든부분에 기여하고 싶은 분이 오셨으면 좋겠습니다.
 
 이외에도 궁금한점 있으면 편하게 연락주세요.
 
