@@ -5,6 +5,7 @@
 ---
 여기 있는 모든 동작들은 `logging.level.org.springframework`를 debug로 설정하면 확인해 볼 수 있다.
 
+
 ### 1. 요청은 어떻게 처리되나
 - spring mvc에서 사용자의 모든 요청(url)은 가장먼저 **디스패처 서블릿**으로 간다. 이걸 **Front Controller Pattern**이라 한다.
 	- 디스패처 서블릿은 url과 상관없이 요청이 가장 먼저 도달하는 곳이다. 디스패처 서블릿이 **루트 URL[ / ]**에 매핑되기 때문
