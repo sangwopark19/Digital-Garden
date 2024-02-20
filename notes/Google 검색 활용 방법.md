@@ -19,3 +19,5 @@ Java에 대한 특정 기술의 새로운 개념을 배울 때는 먼저 해당 
 한 주제에 대해 더 깊이 파고들면 그 주제에 대한 다양한 측면을 더 파악할 수 있고 더 구체적인 검색을 할 수 있다. 이를 위해 따옴표(" ")를 광범위하게 사용한다.
 
 예를 들어 SharedPreferences를 사용하려 하는데 값을 저장할 떄 전달해야 하는 키 상수에 대한 적절한 명명 규칙이 무엇인지 잘 모른다고 가정 할 떄 _**SharedPreferences**_ _**key constant naming convention**_ 를 검색하면 결과가 **매우 좋지 않다** 이는 일반적으로 관련 기사나 블로그 게시물이 없는 매우 구체적인 주제이기 때문이다.
+그러나 우리는 "static final'을 사용하여 Java에서 상수를 선언하고 키가 문자열 값이라는 걸 알고 있다.
+따라서  **SharedPreferences "static final string"** 을 검색하면 SharedPerferences에 대한 상수 이름에 대한 많은 예를 찾을 수 있다.
