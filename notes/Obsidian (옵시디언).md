@@ -281,4 +281,10 @@ Callout 문법이 좋은 이유는 위의 문법에서  `[!note]` 부분을 �
 |이전 창으로 이동|`Ctrl + Page Up`|
 |다음 창으로 이동|`Ctrl + Page Down`|
 
+## 한글 씹힘 오류
+---
+캐시 데이터 삭제를 하면 해결된다.
+맥 명령어
+`rm -rf ~/Library/Application\ Support/obsidian/Cache/Cache_Data/`
+
 
