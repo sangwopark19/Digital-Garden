@@ -21,3 +21,8 @@ Java에 대한 특정 기술의 새로운 개념을 배울 때는 먼저 해당 
 예를 들어 SharedPreferences를 사용하려 하는데 값을 저장할 떄 전달해야 하는 키 상수에 대한 적절한 명명 규칙이 무엇인지 잘 모른다고 가정 할 떄 _**SharedPreferences**_ _**key constant naming convention**_ 를 검색하면 결과가 **매우 좋지 않다** 이는 일반적으로 관련 기사나 블로그 게시물이 없는 매우 구체적인 주제이기 때문이다.
 그러나 우리는 "static final'을 사용하여 Java에서 상수를 선언하고 키가 문자열 값이라는 걸 알고 있다.
 따라서  **SharedPreferences "static final string"** 을 검색하면 SharedPerferences에 대한 상수 이름에 대한 많은 예를 찾을 수 있다.
+
+또한 텍스트에 1:1로 표시되는 문구가 있으면 더 잘 이해하는데 도움이 될 수 있는 문구를 검색한다.
+예를들어 Android의 팔레트 클래스에 대해 조사할 때 "Android 팔레트 눈에띄는 색상"으로 검색할 수 있다.
+
+## "-"가 포함되 단어 제외
