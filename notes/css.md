@@ -61,3 +61,33 @@ li, ol의 `list-style`을 평범하게 제거 하면 Safari가 VoiceOver에서 �
 ```css
 @import "modern-normalize"; :root { line-height: 1.5; } h1, h2, h3, h4, h5, figure, p, ol, ul { margin: 0; } ol[role="list"], ul[role="list"] { list-style: none; padding-inline: 0; } h1, h2, h3, h4, h5 { font-size: inherit; font-weight: inherit; } img { display: block; max-inline-size: 100%; }
 ```
+
+## 모바일 접근성
+---
+### 글꼴이 작을때 자동으로 확대됨
+
+예를 들어 `<textarea>`은 시스템 기본 고정 폭 글꼴을 사용합니다. 텍스트 입력에는 시스템 기본 sans-serif 글꼴이 사용됩니다. 그리고 둘 다 아주 작은 글꼴 크기(Chrome에서는 13.333px)를 선택합니다.
+
+상상할 수 있듯이 모바일 장치에서 13px 텍스트를 읽는 것은 매우 어렵습니다. 작은 글꼴 크기로 입력에 초점을 맞추면 브라우저가 자동으로 확대되어 텍스트를 더 쉽게 읽을 수 있습니다.
+
+안타깝게도 이는 좋은 경험이 아닙니다.
+
+이러한 자동 확대 동작을 피하려면 입력의 글꼴 크기가 최소한 1rem / 16px이어야 합니다. 문제를 해결하는 한 가지 방법은 다음과 같습니다.
+
+```css
+input, button, textarea, select {
+
+  font-size: 1rem;
+
+}
+```
+
+이렇게 하면 자동 확대/축소 문제가 해결되지만 반창고일 뿐입니다. 대신 근본 원인을 해결해 보겠습니다. 양식 입력에는 고유한 인쇄 스타일이 있어서는 안 됩니다!
+
+```css
+input, button, textarea, select {
+
+  font: inherit;
+
+}
+```
