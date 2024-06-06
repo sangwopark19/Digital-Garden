@@ -9,3 +9,55 @@
 inline과 block의 속성을 다시 생각해보면 되는데 inline은 width, hegiht 값이 적용되지 않고 margin, padding 값이 존중되지 않는다. 즉 block 요소의 값들이 전부 제대로 적용이 안되는 대신 글자 취급을 받아 text-aline의 적용을 받는 것이다.
 
 반대로 block 요소 같은 경우엔 width, hegiht가 적용되고 maring, padding 을 존중받고 또한 block 요소에 특별한 값을 주지않으면 기본적으로 그 줄의 모든 가로 값을 자신이 먹기 때문에 text-aline의 위치값이 적용되지 않는것이다.
+
+
+## css 재설정
+---
+### 1. 재설정 라이브러리들이 많이 있다
+
+### 2. 줄높이 재설정
+기본 줄높이는 1.15
+`:root { line-height: 1.5; }` 로 1.5로 설정해주자
+>[Josh Comeau](https://www.joshwcomeau.com/css/custom-css-reset/)가 CSS 재설정 기사에서 지적했듯이 [WCAG 기준](https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html)은 줄 높이가 1.5 이상이어야한다고 명시합니다.
+
+### 3. 여백 지우기
+기본 여백을 제거하면 레이아웃 골치거리를 많이 줄일 수 있다.
+`h1, h2, h3, h4, h5, figure, p, ol, ul { margin: 0; }`
+
+### 4. h태그 스타일 재설정
+`h1, h2, h3, h4, h5 { font-size: inherit; font-weight: inherit; }`
+
+### 5. 기본 리스트 스타일 제거
+li, ol의 `list-style`을 평범하게 제거 하면 Safari가 VoiceOver에서 콘텐츠를 다르게 알리므로 문제가 될 수 있다.
+[이를 위해 Andy Bell의 솔루션을](https://piccalil.li/blog/a-more-modern-css-reset/) 채택했는데, `role="list"` 가있을 때만 목록 스타일을 제거하는 것이다. 역할을 지정하면 VoiceOver 회귀를 방지할 수 있습니다.
+
+`ol[role="list"], ul[role="list"] { list-style: none; padding-inline: 0; }`
+
+
+### 6. 반응형 이미지
+최신 휴대폰에는 2x 및 3x hi-dpi 디스플레이가 있다. 즉, 예를 들어서 css에서 `300px`로 측정된 페이지 영역이 멋지고 선명하게 보이려면 600 또는 900 기기 픽셀 상당의 이미지 데이터가 필요하다. 즉, 큰 이미지를 더 작은 공간에 "압축"해야 하는 경우가 많다.
+
+그러나 기본 브라우저 `<img>` 스타일은 큰 이미지가 단순히 오버플로되는 결과를 초래하므로 바람직하지 않다.
+`img { display: block; max-inline-size: 100%; }`
+ 이렇게 하면 큰 이미지가 오버플로되어 레이아웃 문제가 발생하는 대신 컨테이너 내에 맞게 축소된다.
+
+### 재설정을 취소 해야 하는 경우 어떻게 해야 하나?
+
+때로는 스타일 세트를 지우는것이 올바른 결정이지만 브라우저의 기본스타일이 있었으면 좋을때가 있다. `h`태그가 좋은 예이다. 대부분의 경우 브라우저 기본값 대신 제목 스타일을 완전히 제어하기를 원한다.
+
+그러나 이용 약관 페이지와 같은 긴 형식의 콘텐츠를 포맷하는경우 재설정을 "취소"하고 싶을 것이다. 이러한 경우 css `revert` 키워드를 사용할 수 있다.
+`.article :where(h1, h2, h3, h4, h5) { all: revert; }`
+
+`.article`내에서 `h`태그는 원래 브라우저의 기본 스타일을 사용하여 적절한 글꼴 크기와 굵기로 표시되며, revert 기능으로 인해 원래대로 표시된다.
+
+
+### 결론
+---
+새 프로젝트에서 CSS에 대한 접근 방식을 선택할 때 다음 사항을 고려하자.
+
+1. 1. Tailwind와 같은 CSS 프레임 워크가 프로젝트에 적합합니까? 프레임워크는 일반적으로 자체 정규화 및/또는 재설정을 번들로 제공합니다.
+2. 1. CSS를 처음부터 작성하시겠습니까? [먼저 modern-normalize](https://github.com/sindresorhus/modern-normalize)를 추가합니다. 이렇게 하면 `border-box`가 제공되고 버그, 접근성 문제 및 개발 중에 눈에 띄지 않고 사용자에게 영향을 미칠 수 있는 기타 바람직하지 않은 동작을 수정할 수 있습니다.
+3. 1. 브라우저 기본 디자인을 원한다면 CSS 재설정이 필요하지 않을 수 있습니다. 그렇지 않으면 아래의 경량 버전과 같이 하나를 추가하는 것을 진지하게 고려하십시오. 장기적으로 반복적인 스타일링을 많이 줄일 수 있습니다. 또한 프로젝트 후반에 CSS 재설정을 추가하는 것은 위험할 수 있으므로 미리 결정하는 것이 가장 좋습니다.
+```css
+@import "modern-normalize"; :root { line-height: 1.5; } h1, h2, h3, h4, h5, figure, p, ol, ul { margin: 0; } ol[role="list"], ul[role="list"] { list-style: none; padding-inline: 0; } h1, h2, h3, h4, h5 { font-size: inherit; font-weight: inherit; } img { display: block; max-inline-size: 100%; }
+```
