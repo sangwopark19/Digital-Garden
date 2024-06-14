@@ -91,3 +91,35 @@ input, button, textarea, select {
 
 }
 ```
+
+
+## 일부 콘텐츠만 컨테이너 크기를 넘어 확장하고 싶을때
+---
+![[Pasted image 20240614172211.png]]
+
+다음과 같이 컨테이너 크기를 제한하고 웹페이지를 작성하는데 특정 콘텐츠만 컨테이너를 넘어 확장하고 싶을 때가 있다.
+
+과거에는 다음과 같이 확장된콘텐츠를 제외한 모든것을 래핑하고 특정 하위요소 (p, ul태그 등)의 너비를 제한했었다.
+```html
+<div class="u-containProse">
+  <p>...</p>
+</div>
+<img src="..." alt="...">
+<div class="u-containProse">
+  <p>...</p>
+</div>
+```
+```css
+.u-containProse p,
+.u-containProse ul,
+.u-containProse ol,
+.u-containProse blockquote/*, etc. */ {
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+Code language: CSS (css)
+
+```
+
+하지만 이 기술은 혼란스럽고 귀찮을 뿐만 아니라 글 콘텐츠 내에서 width, margin, 또는 float overide가 예기치 않게 작동할 수 있다. 또한 
