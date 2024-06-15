@@ -122,4 +122,15 @@ Code language: CSS (css)
 
 ```
 
-하지만 이 기술은 혼란스럽고 귀찮을 뿐만 아니라 글 콘텐츠 내에서 width, margin, 또는 float overide가 예기치 않게 작동할 수 있다. 또한 
+하지만 이 기술은 혼란스러울 뿐만 아니라 글 콘텐츠 내에서 `width, margin, float` overide가 예기치 않게 작동할 수 있다.
+
+이 솔루션들의 문제점은 특정한 요소(full-width image) 를 제외한 다른 모든 일반적인 요소(`p`태그 및 기타 일반 플로우 컨텐츠)를 **복잡**하게 만든다는 것이다.
+
+이를 해결하기 위해선 다음과 같은 솔루션을 적용한다.
+```css
+.u-release {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+```
+
