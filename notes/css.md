@@ -126,7 +126,7 @@ Code language: CSS (css)
 
 이 솔루션들의 문제점은 특정한 요소(full-width image) 를 제외한 다른 모든 일반적인 요소(`p`태그 및 기타 일반 플로우 컨텐츠)를 **복잡**하게 만든다는 것이다.
 
-이를 해결하기 위해선 다음과 같은 솔루션을 적용한다.
+이를 해결하기 위해선 다음과 같은 솔루션을 적용하면된다.
 ```css
 .u-release {
   margin-left: calc(-50vw + 50%);
@@ -134,3 +134,14 @@ Code language: CSS (css)
 }
 ```
 
+또는 이 방법도 가능하다
+```css
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+```
