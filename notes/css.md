@@ -145,3 +145,12 @@ Code language: CSS (css)
   margin-right: -50vw;
 }
 ```
+
+## css 단위
+---
+- 글꼴 크기: rem, em
+- width: ch(1ch는 한글자의 넓이), rem
+- height: 높이가 진짜 필요한지 다시 생각해보자 필요하다면 최소 높이를 지정하자
+- padding, margin: rem, em
+- media queries: rem, em
+일반적으로 rem, em, ch를 쓰는게 좋다 px는 거의 쓸일이 없다
