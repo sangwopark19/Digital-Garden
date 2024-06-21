@@ -154,3 +154,13 @@ Code language: CSS (css)
 - padding, margin: rem, em
 - media queries: rem, em
 일반적으로 rem, em, ch를 쓰는게 좋다 px는 거의 쓸일이 없다
+
+## 텍스트 고정
+
+텍스트가 줄어들거나 극단적으로 늘어나는 것을 원하지 않을 것입니다. CSS [`clamp()`](https://developer.mozilla.org/docs/Web/CSS/clamp()) 함수를 사용하여 크기 조정이 시작되고 끝나는 위치를 제어할 수 있습니다. 이렇게 하면 배율이 특정 범위로 '고정'됩니다.
+
+`clamp()` 함수는 `calc()` 함수와 같지만 세 개의 값을 사용합니다. 중간 값은 `calc()`에 전달하는 값과 동일합니다. 여는 값은 최소 크기를 지정하며, 이 경우 1rem은 사용자가 원하는 글꼴 크기 아래로 내려가지 않도록 합니다. 닫는 값은 최대 크기를 지정합니다.
+
+```css
+html {  font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);}
+```
