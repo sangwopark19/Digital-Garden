@@ -164,3 +164,26 @@ Code language: CSS (css)
 ```css
 html {  font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);}
 ```
+
+## 행 길이
+
+웹은 인쇄되지 않지만 인쇄의 세계에서 교훈을 얻어 웹에 적용할 수 있습니다.
+
+로버트 브링허스트는 저서 [_서체 스타일의 요소_](http://webtypography.net/2.1.2)에서 줄 길이 (또는 측정)에 대해 이렇게 이야기했습니다.
+
+> 45~75자라면 텍스트 크기의 serif 텍스트면의 단일 열 페이지 세트에 대해 만족스러운 행 길이로 간주됩니다. 문자와 공백을 모두 포함하여 66자 줄이 이상적입니다. 여러 열 작업의 경우 더 나은 평균은 40~50자입니다.
+
+CSS에서 직접 행 길이를 설정할 수는 없습니다. `line-length` 속성이 없습니다. 하지만 컨테이너의 너비를 제한하여 텍스트가 너무 넓어지지 않도록 할 수 있습니다. 이때 [`max-inline-size`](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) 속성이 적합합니다.
+
+`px`와 같은 고정 단위로 행 길이를 설정하지 마세요. 사용자는 글꼴 크기를 늘리거나 줄일 수 있으며 선 길이는 이에 따라 조정되어야 합니다. `rem`나 `ch` 같은 [상대 단위](https://web.dev/learn/css/sizing?hl=ko#relative_lengths)를 사용합니다.
+
+금지사항
+
+```css
+article {  max-inline-size: 700px; }  
+```
+권장사항
+
+```css
+article {  max-inline-size: 66ch;  }
+```
