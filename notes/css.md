@@ -93,6 +93,15 @@ input, button, textarea, select {
 ```
 
 
+### 추가) 더 좋은 방법
+
+IOS에서 `max()`를 사용하여 input에 대한 브라우저 확대/ 축소 방지
+```css
+input { font-size: max(16px, 1rem);}
+```
+
+이렇게 하면 최소값이 16px이 되고 이상으로 크기조절을 할 수 있다
+
 ## 일부 콘텐츠만 컨테이너 크기를 넘어 확장하고 싶을때
 ---
 ![[Pasted image 20240614172211.png]]
