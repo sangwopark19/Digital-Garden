@@ -1,1 +1,0 @@
-[[L01 Functional Programming]]
