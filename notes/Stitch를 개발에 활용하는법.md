@@ -43,7 +43,7 @@
 
 ## Stitch 결과를 React/코드로 옮길 때
 
-- Cursor와 함께 사용할 것을 전제로, Stitch에서 만든 화면을 **HTML 그대로 구현하라고 Cursor에게 지시하는 방식**이 안정적이었다고 정리합니다.[[gpters](https://www.gpters.org/dev/post/create-personal-blog-vooster-12YzJJPYXmCSDrG)]​
+- Cursor와 함께 사용할 것을 전제로, Stitch에서 만든 화면을 **HTML 그대로 구현하라고 Cursor에게 지시하는 방식**이 안정적이었다고 정리합니다.[gpters](https://www.gpters.org/dev/post/create-personal-blog-vooster-12YzJJPYXmCSDrG)​
     
 - React 변환 프로세스를 별도 축으로 두고, 폴더 구조·컬러 토큰 등은 “완전한 이해보다는 일단 통일해 두고 나중에 학습”하는 전략을 추천합니다.[[gpters](https://www.gpters.org/dev/post/create-personal-blog-vooster-12YzJJPYXmCSDrG)]​
     
