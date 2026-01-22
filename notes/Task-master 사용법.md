@@ -2,7 +2,8 @@
 
 ## Task Master 초기화
 
-가장 처음 
+아래와 이것중에 둘중에 하나
+터미널에서 프로젝트 로컬에 개발 도구로 Task Master를 설치하고, Cursor 전용 규칙으로 자동 초기화
 > npm install -D task-master-ai && npx task-master init --rules cursor --yes
 
 에디터의 AI 채팅창에 다음과 같이 입력하여 프로젝트를 초기화하세요:
