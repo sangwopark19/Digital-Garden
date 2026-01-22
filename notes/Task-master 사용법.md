@@ -3,7 +3,7 @@
 ## Task Master 초기화
 
 가장 처음 
-	npm install -D task-master-ai && npx task-master init --rules cursor --yes
+> npm install -D task-master-ai && npx task-master init --rules cursor --yes
 
 에디터의 AI 채팅창에 다음과 같이 입력하여 프로젝트를 초기화하세요:
 
