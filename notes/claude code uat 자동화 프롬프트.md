@@ -1,4 +1,4 @@
- /gsd:verify-work 13 을 자동화 모드로 실행해줘. 
+ /gsd:verify-work 15 을 자동화 모드로 실행해줘. 
  테스트 계정 test@test.com, testtest
   1. 관련된 스킬 및 playwright-cli를 이용해 localhost 접속                                                                
   2. 각 UAT 테스트를 순서대로 브라우저에서 실행                                                                            
