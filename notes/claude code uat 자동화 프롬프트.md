@@ -1,3 +1,15 @@
+/gsd:verify-work 4
+
+  그 다음 첫 테스트가 나오면:
+
+  dev-browser로 자동 테스트해줘.
+  - 테스트 계정: tkrkr0119@gmail.com / testtest
+  - 앱 URL: http://localhost:8081 (또는 실제 URL)
+  - 자동으로 할 수 있는 건 직접 하고, 모바일 전용이나 네이티브 기능은 나한테
+  요청해 
+ 
+ 
+ 
  /gsd:verify-work 178을 자동화 모드로 실행해줘. 
  테스트 계정 test@test.com, testtest
   1. 관련된 스킬 및 playwright-cli를 이용해 localhost 접속                                                                
