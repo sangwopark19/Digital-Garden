@@ -8,6 +8,24 @@ description: "Collection of DESIGN.md files that capture design systems from pop
 tags:
   - "clippings"
 ---
+인기 웹사이트의 디자인 시스템을 AI 에이전트가 즉시 이해할 수 있는 마크다운(DESIGN.md) 형식으로 정리하여 제공하는 큐레이션 저장소이다.
+
+## 요약
+
+AI 코딩 에이전트가 디자인 가이드라인 없이 UI를 생성할 때 발생하는 스타일 불일치 문제를 해결하기 위해 텍스트 기반 디자인 명세인 DESIGN.md 파일을 제공한다. Google Stitch가 제안한 표준 형식을 따라 색상 팔레트, 타이포그래피, 레이아웃 원칙을 마크다운으로 구조화하여 LLM이 별도의 파싱 과정 없이 디자인 의도를 정확히 파악하도록 설계했다. 개발자가 선호하는 웹사이트의 디자인 파일을 프로젝트에 포함하고 에이전트에게 이를 참조하도록 지시하면 실제 서비스 수준의 정교한 UI 결과물을 얻는 데 유용하다.
+
+## 주요 기능
+
+- 55개 이상의 유명 웹사이트 디자인 시스템을 DESIGN.md 형식으로 제공하여 AI 에이전트의 디자인 참조를 돕는다
+- LLM이 가장 잘 이해하는 마크다운 구조를 채택하여 에이전트의 디자인 가이드라인 이해도를 높인다
+- 색상, 폰트, 컴포넌트 스타일 등 9가지 핵심 디자인 섹션으로 상세 명세화하여 일관된 UI 생성을 보장한다
+- 다크 및 라이트 모드 대응을 위한 시각적 미리보기 HTML 파일을 포함하여 개발자가 결과물을 즉시 확인하게 한다
+- Google Stitch 표준 규격을 준수하여 다양한 AI 코딩 도구와의 워크플로 연동성을 강화한다
+
+## 어떻게 동작하는가
+
+디자인 시스템의 핵심 요소들을 LLM 친화적인 마크다운 구조로 기술하여, AI 에이전트가 프롬프트 내에서 디자인 제약 조건을 실시간으로 참조하며 코드를 생성하도록 유도한다.
+
 [![claude-skills](https://private-user-images.githubusercontent.com/18739364/572052038-d012a0d2-cec3-4630-ba5e-acc339dbe6cf.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUxNzc5NjEsIm5iZiI6MTc3NTE3NzY2MSwicGF0aCI6Ii8xODczOTM2NC81NzIwNTIwMzgtZDAxMmEwZDItY2VjMy00NjMwLWJhNWUtYWNjMzM5ZGJlNmNmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDAzVDAwNTQyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFlZjU4ZmMxYWE2ZWI2YTJiZGVhZDIyMjY2MjgxN2VkNzA5MmU3NjZkMDhmYWVlMDZkZmVlNjJmOWE1N2ZjZTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.JBejUoag22gIQR4-_uLc8YabfNEDxelc2W9YRWBxJp0)](https://github.com/VoltAgent/voltagent)  
   
 
