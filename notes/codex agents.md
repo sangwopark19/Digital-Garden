@@ -1,0 +1,7 @@
+Codex 5.5 medium가 Codex 5.5 extra high를 어떻게 이기고 있는가? Agents.md에 이 규칙을 추가하세요: "오류와 싸우지 마세요! 같은 오류를 두 번 만날 때마다 웹을 검색해서 3-5가지 가능한 해결 방법을 찾으세요. 그런 다음 가장 효율적인 해결책을 선택해서 구현하세요." 이 프롬프트는 열심히 생각하는 데 스트레스를 주고 나쁜 결정의 루프에 빠지는 대신, 실제로 효과가 있었던 새로운 관점을 찾게 해줍니다. 나는 복잡한 작업(모델 훈련, 평가 실행, 최고 체크포인트를 GGUF로 변환 등)에서 이 실험을 실행했는데, 어떤 오류도 만나지 않았습니다. 최고의 부분: 최소 5시간 및 주간 사용 제한. 나는 Codex 5.5 medium(빠름)을 사용 중인데, 즉시 느껴집니다. 하지만 여기 함정이 있어요: 세션 계획은 Codex 5.5 extra high로 설계해야 합니다! medium 변형은 계획을 실행하는 데만 사용하세요. 이렇게 하면 Codex 5.5 medium의 느슨한 사고를 사용하지 않고, 작업 목록을 제대로 실행하는 데 그 빠른 속도를 활용할 수 있습니다. 직접 시도해보세요.
+
+prompt: "Don’t fight errors! Whenever you encounter the same error twice, research the web and find 3-5 possible ways to fix it. Then choose the most efficient solution and implement it."
+
+"이 전략에 100% 확신이 있나요? 그렇지 않다면, 모든 가능한 허점을 찾아내고 적절한 수정 사항을 제안한 뒤, 새로운 전략에 사실상 100% 확신이 들 때까지 이 루프를 반복하세요" 이게 아주 효과적으로 작동합니다. Codex 5.5 고성능을 Codex 5.5 초고성능보다 더 잘 작동하게 만듭니다. 왜냐고요? Codex 5.5는 제가 알아챈 유일한 모델로, 자아 인식(self-aware)이 있습니다. 모델이 모든 것을 검증하지 않으면 절대 과도한 주장을 하지 않습니다. 이건 Opus 4.7과는 작동하지 않습니다. 왜냐하면 그건 매우 불안정한 모델이기 때문입니다. 이 프롬프트를 계속 붙여넣어도 모델은 "당신 말이 완전히 맞아요,....."라고만 반복합니다. 하지만 Codex와 함께라면, 2-3번 반복 후에 직접 느껴보게 될 거예요. 실제로 모든 허점을 패치했고, 이게 진짜 좋은 전략처럼 들린다는 걸요. 직접 해보세요, 나중에 감사 인사나 해요.
+
+prompt: "Are you 100% confident in this strategy? If not, find all possible loopholes, suggest proper fixes and run this loop until you are factually 100% confident in the new startegy"
